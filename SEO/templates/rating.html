@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="hero-section">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <span class="subheading mb-2" data-aos="fade-up">Feedback</span>
+                <h1 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">Your feedback we make us serve you better!</h1>
+                <p class="mb-5" data-aos="fade-up" data-aos-delay="200">Far far away, behind the word mountains, far
+                    from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in
+                    Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="img-wrap" data-aos="fade-left">
+                    <img src="../static/images/w-logo.jpg" alt="Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container pt-0">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 order-lg-2 mb-5 mb-lg-0">
+            <div class="section-title mb-5">
+                <strong class="subtitle" data-aos="fade-up" data-aos-delay="0">Feedback</strong>
+                <h2 class="heading" data-aos="fade-up" data-aos-delay="100">Let's serve you more!</h2>
+            </div>
+
+            {% if message %}
+            <p class="message text-danger">{{ message | safe }}</p>
+            {% endif %}
+
+<!--            FORM SECTION FOR BACKEND-->
+            <form action="/rating" method="POST" class="contact-form" data-aos="fade-up" data-aos-delay="200">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group mb-3">
+                            <label for="customer" class="text-black">Customer name</label>
+                            <input name="customer" type="text" id="customer" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group mb-3">
+                            <label class="text-black" for="email">Email address</label>
+                            <input type="email" name="email" class="form-control" id="email">
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="form_group mb-3">
+                     <div class="form-group mb-3">
+                            <label class="text-black" for="service" >Service rendered</label>
+                            <select name="service" class="form-select form-control form-select-lg mb-3" aria-label=".form-select-lg example" id="service">
+                                <option class="form-control" selected></option>
+                                <option class="form-control" value="Website Development">Website Development</option>
+                                <option class="form-control" value="Backend Services">Backend Services</option>
+                                <option class="form-control" value="Android n IOs Development">Android n IOs Development</option>
+                                <option class="form-control" value="Graphics Designs">Graphics Designs</option>
+                                <option class="form-control" value="Other Services">Other Services</option>
+                            </select>
+                        </div>
+                </div>
+
+<!--                RATING SECTION-->
+                <div class="form-group"><label class="text-black " >Rate services been rendered</label></div>
+            <div class="row">
+                <div class="col-2 p-3 m-3">
+                    <div class="form-group ">
+                        <div class="form-check form-check-inline float-start">
+                            <input class="form-check-input" type="radio" name="star" value="1">
+                            <label class="form-check-label">1</label>
+
+                            <input class="form-check-input" type="radio" name="star" value="2">
+                            <label class="form-check-label">2</label>
+
+                            <input class="form-check-input" type="radio" name="star" value="3">
+                            <label class="form-check-label">3</label>
+
+                              <input class="form-check-input" type="radio" name="star" value="4">
+                            <label class="form-check-label">4</label>
+
+                            <input class="form-check-input" type="radio" name="star" value="5">
+                            <label class="form-check-label">5</label>
+
+                            <input class="form-check-input" type="radio" name="star" value="6">
+                            <label class="form-check-label">6</label>
+
+                              <input class="form-check-input" type="radio" name="star" value="7">
+                            <label class="form-check-label">7</label>
+
+                            <input class="form-check-input" type="radio" name="star" value="8">
+                            <label class="form-check-label">8</label>
+
+                            <input class="form-check-input" type="radio" name="star" value="9">
+                            <label class="form-check-label">9</label>
+
+                            <input class="form-check-input" type="radio" name="star" value="10" checked>
+                            <label class="form-check-label">10</label>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+                <div class="form-group mb-3 mt-3">
+                    <label class="text-black" for="comments">Comments about your experience</label>
+                    <textarea name="comments" class="form-control" id="comments" cols="30" rows="5"></textarea>
+                </div>
+                <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
